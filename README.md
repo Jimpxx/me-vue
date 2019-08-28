@@ -1,5 +1,7 @@
 # me-vue
 
+This project is done in Vue.js and it is done for the course DV1612 JavaScript-baserade webbramverk at BTH.
+
 ## Project setup
 ```
 npm install
