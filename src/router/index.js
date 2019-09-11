@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Me from '@/components/Me';
 import Report from '@/components/Report';
+import Form from '@/components/Form';
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ export default new VueRouter({
             path: '/reports/week/1',
             name: 'Report',
             component: Report,
+        },
+        {
+            path: '/register',
+            name: 'Register',
+            component: Form,
         },
     ],
 });

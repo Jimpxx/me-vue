@@ -11,6 +11,9 @@
                 <li>
                     <router-link to="/reports/week/1">Report</router-link>
                 </li>
+                <li>
+                    <router-link to="/register">Register</router-link>
+                </li>
             </ul>
         </div>
         <router-view></router-view>
@@ -57,7 +60,7 @@ html {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    /* text-align: center; */
     color: #2c3e50;
     /* margin-top: 60px; */
 }
@@ -93,8 +96,9 @@ html {
 }
 
 .nav a:hover {
-    background-color: #222;
-    color: rgb(252, 92, 0);
+    /* background-color: #222; */
+    color: #2828d3;
+    /* color: rgb(252, 92, 0); */
 }
 
 .site-footer {
