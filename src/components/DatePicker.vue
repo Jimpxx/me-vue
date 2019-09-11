@@ -84,8 +84,8 @@ export default {
     data() {
         return {
             year: "Year",
-            month: null,
-            day: null
+            month: "Month",
+            day: "Day"
         };
     }
 };

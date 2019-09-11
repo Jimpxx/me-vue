@@ -9,7 +9,10 @@
                     <router-link to="/">Me</router-link>
                 </li>
                 <li>
-                    <router-link to="/reports/week/1">Report</router-link>
+                    <router-link to="/reports/kmom01">Kmom01</router-link>
+                </li>
+                <li>
+                    <router-link to="/reports/kmom02">Kmom02</router-link>
                 </li>
                 <li>
                     <router-link to="/register">Register</router-link>

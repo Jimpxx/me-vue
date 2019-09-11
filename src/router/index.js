@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Me from '@/components/Me';
-import Report from '@/components/Report';
+import Kmom01 from '@/components/Kmom01';
+import Kmom02 from '@/components/Kmom02';
 import Form from '@/components/Form';
 
 Vue.use(VueRouter);
@@ -14,9 +15,16 @@ export default new VueRouter({
             component: Me,
         },
         {
-            path: '/reports/week/1',
-            name: 'Report',
-            component: Report,
+            // path: '/reports/week/1',
+            path: '/reports/kmom01',
+            name: 'Kmom01',
+            component: Kmom01,
+        },
+        {
+            // path: '/reports/week/1',
+            path: '/reports/kmom02',
+            name: 'Kmom02',
+            component: Kmom02,
         },
         {
             path: '/register',

@@ -1,8 +1,7 @@
 <template>
     <div class="container">
-        <h1>Redovisningstext</h1>
+        <h1>Kmom01</h1>
         <a href="https://github.com/Jimpxx/me-vue">Repots Github</a>
-
         <h2>me-vue</h2>
         <p>This project is done in Vue.js and it is done for the course DV1612 JavaScript-baserade webbramverk at BTH.</p>
         <h3>Project setup</h3>
@@ -22,7 +21,7 @@
 
 <script>
 export default {
-    name: "Report"
+    name: "Kmom01"
 };
 </script>
 
