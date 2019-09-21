@@ -2,7 +2,7 @@
     <div class="datepicker">
         <p>
             <label class="input-label" for="bday">Birthday</label>
-            <select name="year" id="year" v-model="year" required>
+            <select name="year" id="year" v-model="year" @change="changeBday" required>
                 <option value="year" selected disabled hidden>Year</option>
                 <option value="2001">2001</option>
                 <option value="2000">2000</option>
@@ -23,34 +23,34 @@
                 <option value="1985">1985</option>
                 <option value="1984">1984</option>
             </select>
-            <select name="month" id="month" v-model="month" required>
+            <select name="month" id="month" v-model="month" @change="changeBday" required>
                 >
                 <option value="month" selected disabled hidden>Month</option>
-                <option value="jan">January</option>
-                <option value="feb">February</option>
-                <option value="mar">March</option>
-                <option value="apr">April</option>
-                <option value="may">May</option>
-                <option value="jun">June</option>
-                <option value="jul">July</option>
-                <option value="aug">August</option>
-                <option value="sep">September</option>
-                <option value="oct">October</option>
-                <option value="nov">November</option>
-                <option value="dec">December</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
             </select>
-            <select name="day" id="day" v-model="day" required>
+            <select name="day" id="day" v-model="day" @change="changeBday" required>
                 >
                 <option value="day" selected disabled hidden>Day</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -87,6 +87,11 @@ export default {
             month: "Month",
             day: "Day"
         };
+    },
+    methods: {
+        changeBday() {
+            this.$parent.birthday = `${this.year}/${this.month}/${this.day}`;
+        },
     }
 };
 </script>

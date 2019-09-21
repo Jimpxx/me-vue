@@ -17,6 +17,9 @@
                 <li>
                     <router-link to="/register">Register</router-link>
                 </li>
+                <li>
+                    <router-link to="/login">Login</router-link>
+                </li>
             </ul>
         </div>
         <router-view></router-view>

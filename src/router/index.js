@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 import Me from '@/components/Me';
 import Kmom01 from '@/components/Kmom01';
 import Kmom02 from '@/components/Kmom02';
-import Form from '@/components/Form';
+import Register from '@/components/Register';
+import Login from '@/components/Login';
 
 Vue.use(VueRouter);
 
@@ -29,7 +30,12 @@ export default new VueRouter({
         {
             path: '/register',
             name: 'Register',
-            component: Form,
+            component: Register,
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login,
         },
     ],
 });
