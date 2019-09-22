@@ -28,12 +28,7 @@ export default new VueRouter({
             name: 'Me',
             component: Me,
         },
-        {
-            // path: '/reports/week/1',
-            path: '/reports/:kmom',
-            name: 'Reports',
-            component: Reports,
-        },
+
         // {
         //     // path: '/reports/week/1',
         //     path: '/reports/kmom01',
@@ -90,6 +85,12 @@ export default new VueRouter({
                     });
                 }
             },
+        },
+        {
+            // path: '/reports/week/1',
+            path: '/reports/:kmom',
+            name: 'Reports',
+            component: Reports,
         },
         {
             // path: '/reports/week/1',
