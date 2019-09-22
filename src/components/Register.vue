@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <form class id="register-form" @submit="doRegister" method="post" action="http://localhost:1337">
+        <form class id="register-form" @submit="doRegister" method="post" action>
             <h1>Register an account to write your weekly reports</h1>
             <p>
                 <label class="input-label" for="name">Name</label>
@@ -36,7 +36,7 @@
                     minlength="8"
                 />
             </p>
-            <DatePicker birthday="" />
+            <DatePicker birthday />
             <p>
                 <input type="submit" value="Submit" class="button" id="formSubBtn" />
             </p>
@@ -70,18 +70,21 @@ export default {
                 email: this.email,
                 password: this.password,
                 birthday: this.birthday
-            }
+            };
 
-            return fetch("http://localhost:1337/register", {
+            // return fetch("http://localhost:1337/register", {
+            return fetch("http://localhost/register", {
                 method: "POST",
-                headers: { 'Content-Type': 'application/json' },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dataObject)
-            }).then(res => {
-                this.$router.push("/login")
-                return res;
-            }).catch(err => {
-                return err.message;
-            });
+            })
+                .then(res => {
+                    this.$router.push("/login");
+                    return res;
+                })
+                .catch(err => {
+                    return err.message;
+                });
         }
     }
 };

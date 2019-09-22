@@ -54,7 +54,8 @@ export default {
                 password: this.password
             };
 
-            fetch("http://localhost:1337/login", {
+            // fetch("http://localhost:1337/login", {
+            fetch("http://localhost/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dataObject)
