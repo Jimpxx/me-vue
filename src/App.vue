@@ -8,11 +8,17 @@
                 <li>
                     <router-link to="/">Me</router-link>
                 </li>
-                <li>
+                <!-- <li>
                     <router-link to="/reports/kmom01">Kmom01</router-link>
                 </li>
                 <li>
                     <router-link to="/reports/kmom02">Kmom02</router-link>
+                </li>
+                <li>
+                    <router-link to="/reports/kmom03">Kmom03</router-link>
+                </li>-->
+                <li>
+                    <router-link to="/reports/kmom01">Reports</router-link>
                 </li>
                 <li>
                     <router-link to="/register">Register</router-link>
@@ -20,6 +26,14 @@
                 <li>
                     <router-link to="/login">Login</router-link>
                 </li>
+                <li>
+                    <router-link to="/admin" v-if="this.$store.getters.getToken">Admin</router-link>
+                </li>
+                <!-- <li>
+                    <p
+                        v-if="this.$store.getters.getToken"
+                    >Logged in as: {{this.$store.getters.getLoggedInUser.name}}</p>
+                </li>-->
             </ul>
         </div>
         <router-view></router-view>
@@ -40,6 +54,9 @@ export default {
         // HelloWorld,
         // Me,
         // Report
+    },
+    data() {
+        return {};
     }
 };
 </script>
