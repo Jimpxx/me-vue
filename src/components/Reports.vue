@@ -80,7 +80,8 @@ export default {
         updateContent: function(week) {
             // fetch(`http://localhost:1337/reports/${this.$route.params.kmom}`, {
             console.log("Week", week);
-            fetch(`http://localhost:1337/reports/${week}`, {
+            // fetch(`http://localhost:1337/reports/${week}`, {
+            fetch(`https://me-api.jimmyandersson.me/reports/${week}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -101,7 +102,8 @@ export default {
                 });
         },
         getAll: function() {
-            fetch(`http://localhost:1337/reports/`, {
+            // fetch(`http://localhost:1337/reports/`, {
+            fetch(`https://me-api.jimmyandersson.me/reports/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -126,5 +128,12 @@ export default {
 <style scoped>
 .links {
     margin: 2rem 1rem;
+}
+
+p,
+h1,
+a {
+    line-height: 1.5;
+    margin: 1rem 0;
 }
 </style>

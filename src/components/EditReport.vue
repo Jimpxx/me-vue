@@ -60,7 +60,8 @@ export default {
         };
     },
     mounted() {
-        fetch(`http://localhost:1337/reports/${this.week}`, {
+        // fetch(`http://localhost:1337/reports/${this.week}`, {
+        fetch(`https://me-api.jimmyandersson.me/reports/${this.week}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -96,7 +97,8 @@ export default {
                 text: this.text
             };
 
-            fetch(`http://localhost:1337/reports/${this.week}`, {
+            // fetch(`http://localhost:1337/reports/${this.week}`, {
+            fetch(`https://me-api.jimmyandersson.me/reports/${this.week}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

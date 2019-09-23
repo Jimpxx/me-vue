@@ -35,7 +35,8 @@ export default {
         };
     },
     mounted() {
-        fetch("http://localhost:1337/reports", {
+        // fetch("http://localhost:1337/reports", {
+        fetch("https://me-api.jimmyandersson.me/reports", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -57,12 +58,15 @@ export default {
 <style scoped>
 table {
     width: 100%;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
     padding: 1rem;
     text-align: left;
 }
-th {
+th,
+td {
     height: 3rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
 }
 tr {
     padding: 1rem;

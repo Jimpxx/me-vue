@@ -84,7 +84,8 @@ export default {
                 text: this.text
             };
 
-            fetch("http://localhost:1337/reports", {
+            // fetch("http://localhost:1337/reports", {
+            fetch("https://me-api.jimmyandersson.me/reports", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

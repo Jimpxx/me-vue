@@ -73,7 +73,7 @@ export default {
             };
 
             // return fetch("http://localhost:1337/register", {
-            return fetch("http://localhost/register", {
+            return fetch("https://me-api.jimmyandersson.me/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dataObject)

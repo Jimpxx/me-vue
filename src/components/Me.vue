@@ -36,7 +36,8 @@ export default {
     methods: {
         getDescription() {
             let that = this;
-            fetch("http://localhost:1337")
+            // fetch("http://localhost:1337")
+            fetch("https://me-api.jimmyandersson.me")
                 .then(function(response) {
                     return response.json();
                 })

@@ -55,7 +55,7 @@ export default {
             };
 
             // fetch("http://localhost:1337/login", {
-            fetch("http://localhost/login", {
+            fetch("https://me-api.jimmyandersson.me/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dataObject)
