@@ -32,8 +32,6 @@
 </template>
 
 <script>
-// import { store } from "../store"
-
 export default {
     name: "Login",
     components: {},
@@ -46,9 +44,7 @@ export default {
     methods: {
         doLogin: function(e) {
             e.preventDefault();
-            // if (this.name && this.email && this.password) {
-            //     return true;
-            // }
+
             const dataObject = {
                 email: this.email,
                 password: this.password
@@ -61,24 +57,13 @@ export default {
                 body: JSON.stringify(dataObject)
             })
                 .then(res => {
-                    // console.log(res.text());
-                    // console.log(res.JSON());
-                    // return JSON.parse(res.data);
                     return res.text();
                 })
                 .then(text => {
                     return JSON.parse(text);
                 })
                 .then(user => {
-                    // console.log(user.data.token);
-                    // store.addTokenToState(user.data.token);
-                    // console.log("Before added token");
-
-                    // this.$store.dispatch("changeUser", user.data.user);
                     this.changeToken(user.data);
-                    // this.changeToken(user.data.token);
-                    // console.log("After added token");
-                    // console.log(this.$store.state.token);
                 })
                 .catch(err => {
                     return err.message;
@@ -86,19 +71,14 @@ export default {
         },
 
         changeToken(user) {
-            // console.log("Changing token..");
-            // this.$store.dispatch("addTokenToState", token);
             this.$store
                 .dispatch("addTokenToState", user.token)
                 .then(response => {
-                    // console.log("Success");
-                    // console.log(response);
                     this.$store.dispatch("changeUser", user.user);
                     this.$router.push("/admin");
                     return response;
                 })
                 .catch(err => {
-                    // console.log(err.message);
                     return err.message;
                 });
         }

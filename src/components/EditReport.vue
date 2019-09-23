@@ -82,15 +82,12 @@ export default {
     methods: {
         editReport: function(e) {
             e.preventDefault();
-            console.log("Report will be edited!");
 
             const token = this.$store.getters.getToken;
 
             if (!token) {
-                console.log("No token!");
                 return this.$router.push("/login");
             }
-            console.log(token);
             const dataObject = {
                 week: this.week,
                 title: this.title,
@@ -109,30 +106,13 @@ export default {
                 .then(response => {
                     return response.text();
                 })
-                // .then(text => {
-                //     JSON.parse(text);
-                // })
                 .then(data => {
-                    console.log("Updated!");
-                    // return report;
-                    // resolve(data ? JSON.parse(data) : {});
                     return data;
                 })
                 .then(() => {
                     this.$router.push("/admin");
                 })
-                // .then(response => {
-                //     return response.text();
-                // })
-                // .then(text => {
-                //     return JSON.parse(text);
-                // })
-                // .then(report => {
-                //     console.log("Updated!");
-                //     return report;
-                // })
                 .catch(err => {
-                    console.log(err.message);
                     return err.message;
                 });
         }

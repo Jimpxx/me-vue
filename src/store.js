@@ -1,7 +1,7 @@
-import Vue from "vue"
-import Vuex from "vuex"
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
@@ -12,17 +12,15 @@ export const store = new Vuex.Store({
     mutations: {
         ADD_TOKEN(state, newToken) {
             state.token = newToken;
-            // console.log("Token changed..");
         },
         CHANGE_USER(state, newUser) {
-            state.loggedInUser = newUser
-        }
+            state.loggedInUser = newUser;
+        },
     },
 
     actions: {
         addTokenToState({ commit }, newToken) {
-            // console.log(context.state);
-            commit("ADD_TOKEN", newToken);
+            commit('ADD_TOKEN', newToken);
         },
         // addTokenToState({ commit }, newToken) {
         //     return new Promise((resolve, reject) => {
@@ -35,8 +33,8 @@ export const store = new Vuex.Store({
         //     })
         // }
         changeUser({ commit }, newUser) {
-            commit("CHANGE_USER", newUser)
-        }
+            commit('CHANGE_USER', newUser);
+        },
     },
 
     getters: {
@@ -45,6 +43,6 @@ export const store = new Vuex.Store({
         },
         getLoggedInUser(state) {
             return state.loggedInUser;
-        }
+        },
     },
 });

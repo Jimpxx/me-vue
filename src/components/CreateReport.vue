@@ -33,7 +33,7 @@
                 />
             </p>
             <p>
-                <label class="input-label" for="text">Report-text</label>
+                <label class="input-label" for="text">Report-text (Write in HTML)</label>
                 <textarea
                     class="input-field"
                     name="text"
@@ -53,8 +53,6 @@
 </template>
 
 <script>
-// import { store } from "../store"
-
 export default {
     name: "CreateReport",
     components: {},
@@ -69,12 +67,10 @@ export default {
     methods: {
         createReport: function(e) {
             e.preventDefault();
-            console.log("Report will be created!");
 
             const token = this.$store.getters.getToken;
 
             if (!token) {
-                console.log("No token!");
                 return this.$router.push("/login");
             }
 
@@ -98,17 +94,11 @@ export default {
                 })
                 .then(text => {
                     return JSON.parse(text);
-                    // return text.json()
                 })
                 .then(text => {
-                    console.log(text);
-                    // if (text.errors) {
-                    //     this.errorText = text.errors.detail || "";
-                    // }
                     this.$router.push("/admin");
                 })
                 .catch(err => {
-                    console.log(err.message);
                     return err.message;
                 });
         }

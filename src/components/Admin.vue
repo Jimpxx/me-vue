@@ -58,7 +58,6 @@ export default {
 <style scoped>
 table {
     width: 100%;
-    /* border: 1px solid #333; */
     padding: 1rem;
     text-align: left;
 }

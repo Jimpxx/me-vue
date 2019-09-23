@@ -62,9 +62,6 @@ export default {
     methods: {
         doRegister: function(e) {
             e.preventDefault();
-            // if (this.name && this.email && this.password) {
-            //     return true;
-            // }
             const dataObject = {
                 name: this.name,
                 email: this.email,
