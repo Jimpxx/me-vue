@@ -20,7 +20,7 @@ test.describe('Me-vue', function() {
             .withCapabilities(webdriver.Capabilities.firefox())
             .build();
 
-        browser.get('http://localhost:8081/#/');
+        browser.get('http://localhost:8080/#/');
         done();
     });
 
