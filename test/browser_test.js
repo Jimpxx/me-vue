@@ -77,6 +77,26 @@ test.describe('Me-vue', function() {
         done();
     });
 
+    test.it('Test go to Register', function(done) {
+        // try use nav link
+        goToNavLink('Register');
+
+        assertH1('Register an account to write your weekly reports');
+        // matchUrl('#!/');
+
+        done();
+    });
+
+    test.it('Test go to Login', function(done) {
+        // try use nav link
+        goToNavLink('Login');
+
+        assertH1('Login to write your weekly reports');
+        // matchUrl('#!/');
+
+        done();
+    });
+
     // test.it("Test go to About", function(done) {
     //     goToNavLink("About");
 
