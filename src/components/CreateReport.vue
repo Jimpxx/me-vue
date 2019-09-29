@@ -95,7 +95,7 @@ export default {
                 .then(text => {
                     return JSON.parse(text);
                 })
-                .then(text => {
+                .then(() => {
                     this.$router.push("/admin");
                 })
                 .catch(err => {

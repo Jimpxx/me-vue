@@ -7,7 +7,10 @@
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "deploy": "npm run build && rsync -av dist/* deploy@165.22.17.54:/var/www/jimmyandersson.me/html/",
-        "test": "mocha test/**/*.js"
+        "mocha": "mocha test/**/*.js",
+        "test": "PORT=8081 npm run serve & mocha",
+        "test:wait": "wait-on npm run serve && npm run mocha",
+        "test:forever": "forever start -c 'npm run serve' ./"
     },
     "dependencies": {
         "core-js": "^2.6.5",
@@ -20,12 +23,14 @@
         "@vue/cli-plugin-eslint": "^3.11.0",
         "@vue/cli-service": "^3.11.0",
         "babel-eslint": "^10.0.1",
+        "concurrently": "^4.1.2",
         "eslint": "^5.16.0",
         "eslint-plugin-vue": "^5.0.0",
         "http-server": "^0.11.1",
         "mocha": "^6.2.0",
         "selenium-webdriver": "^3.6.0",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.10",
+        "wait-on": "^3.3.0"
     },
     "eslintConfig": {
         "root": true,
