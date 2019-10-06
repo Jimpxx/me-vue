@@ -24,6 +24,9 @@
                     <router-link to="/login">Login</router-link>
                 </li>
                 <li>
+                    <router-link to="/chat">Chat</router-link>
+                </li>
+                <li>
                     <router-link to="/admin" v-if="this.$store.getters.getToken">Admin</router-link>
                 </li>
                 <!-- <li>

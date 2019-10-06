@@ -12,6 +12,7 @@ import Login from '@/components/Login';
 import Admin from '@/components/Admin';
 import EditReport from '@/components/EditReport';
 import DeleteReport from '@/components/DeleteReport';
+import Chat from '@/components/Chat';
 
 Vue.use(VueRouter);
 
@@ -121,6 +122,11 @@ export default new VueRouter({
                     });
                 }
             },
+        },
+        {
+            path: '/chat',
+            name: 'Chat',
+            component: Chat,
         },
     ],
 });
