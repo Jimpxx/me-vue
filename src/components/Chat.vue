@@ -28,6 +28,8 @@
                 </div>
                 <button type="submit" class="btn btn-success">Send</button>
             </form>
+            <button @click="saveChat">Save chat</button>
+            <button @click="loadChat">Load chat</button>
         </div>
     </div>
 </template>
@@ -42,7 +44,7 @@ export default {
             time: null,
             messages: [],
             socket: io("https://socket-server.jimmyandersson.me")
-            // socket: io("localhost:3001")
+            // socket: io("localhost:8300")
         };
     },
 
@@ -62,6 +64,16 @@ export default {
                 time: this.time
             });
             this.message = "";
+        },
+
+        saveChat(e) {
+            e.preventDefault();
+            this.socket.emit("SAVE_CHAT", this.messages);
+        },
+
+        loadChat(e) {
+            e.preventDefault();
+            this.socket.emit("LOAD_CHAT");
         },
 
         getTime() {
@@ -88,6 +100,12 @@ export default {
             data.message = "User left the chatroom";
             data.time = this.getTime();
             this.messages.push(data);
+        });
+
+        this.socket.on("LOAD_RESPONSE", chat => {
+            chat.map(data => {
+                this.messages.push(data);
+            });
         });
 
         // this.socket.on("user-connected", data => {
